@@ -1,10 +1,11 @@
 name: 'Node CI Action'
-description: 'Node CI action that installs node, project dependencies, makes project build and run the tests
+description: 'Node Basic CI action that installs node usign actions/setup-node@v3, install project dependencies, runs project build and runs project tests'
+author: 'arensis'
 inputs:
   node-version:
     description: 'Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.'
     required: false
-    default: '20.x'
+    default: 20.x
   cache:
     description: 'Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.'
     required: false
