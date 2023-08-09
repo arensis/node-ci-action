@@ -1,6 +1,9 @@
 name: 'Node CI Action'
-description: 'Node Basic CI action that installs node usign actions/setup-node@v3, install project dependencies, runs project build and runs project tests'
+description: 'Node Basic CI action that installs node, project dependencies, runs project build and runs project tests'
 author: 'arensis'
+branding:
+  icon: 'terminal'
+  color: 'blue'
 inputs:
   node-version:
     description: 'Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.'
