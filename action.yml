@@ -2,23 +2,27 @@ name: 'Node CI Action'
 description: 'Node CI action that installs node, project dependencies, makes project build and run the tests
 inputs:
   node-version:
-    description: ''
+    description: 'Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.'
     required: true
     default: '20.x'
+  cache:
+    description: 'Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.'
+    required: false
+    default: 'npm'
 runs:
   using: "composite"
   steps:
-    - name: Set up node version ${{inputs.node-version}}
+    - name: Setting up node version ${{inputs.node-version}}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ inputs.node-version }}
-        cache: 'npm'
+        cache: ${{ inputs.cache }}
 
-    - name: Install dependencies
+    - name: Installing dependencies
       run: npm ci
 
-    - name: Build app
+    - name: Building app
       run: npm run build
 
-    - name: Run the tests
+    - name: Running the tests
       run: npm run tests
