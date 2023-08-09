@@ -3,7 +3,7 @@ description: 'Node CI action that installs node, project dependencies, makes pro
 inputs:
   node-version:
     description: 'Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.'
-    required: true
+    required: false
     default: '20.x'
   cache:
     description: 'Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.'
